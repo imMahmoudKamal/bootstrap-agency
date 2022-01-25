@@ -1,0 +1,192 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 20px;
+  --yellow-clr: #ffc800;
+  --border-clr: #dee2e6;
+  --dark-clr: #212529;
+  scroll-behavior: smooth;
+  scroll-padding-top: 3.5rem;
+}
+
+.fs-sm {
+  font-size: 0.8rem;
+}
+
+.fs-xsm {
+  font-size: 0.6rem;
+}
+
+.bg-yellow {
+  background-color: var(--yellow-clr);
+}
+
+.accent-font {
+  font-family: 'Roboto Slab';
+}
+
+body {
+  font-family: 'Montserrat';
+}
+
+.brand-logo {
+  height: 1.5rem;
+}
+
+#navigation {
+  background-color: var(--dark-clr);
+}
+
+.nav-toggler {
+  font-size: 0.7rem;
+}
+
+.hero-header {
+  background: url('../img/header-bg.jpg') center / cover no-repeat;
+  padding: 18rem 1rem 0;
+  height: 90vh;
+}
+
+.hero-header h1 {
+  font-size: 2.5rem;
+}
+
+section {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.section-heading {
+  font-size: 2rem;
+}
+
+.portfolio-item {
+  position: relative;
+}
+
+.portfolio-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--yellow-clr);
+  opacity: 0;
+  transition: opacity 300ms ease 0s;
+}
+
+.portfolio-item::after {
+  content: '+';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 4rem;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 300ms ease 100ms;
+}
+
+.portfolio-item:hover::before {
+  opacity: 0.75;
+}
+
+.portfolio-item:hover::after {
+  opacity: 1;
+}
+
+.timeline {
+  position: relative;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 54px;
+  width: 2px;
+  background-color: var(--border-clr);
+  z-index: -1;
+}
+
+.about-img {
+  width: 80px;
+  height: 80px;
+}
+
+.team-img {
+  width: 200px;
+  height: 200px;
+}
+
+.social-cont {
+  width: 2rem;
+  height: 2rem;
+}
+
+.service-cont {
+  width: 4rem;
+  height: 4rem;
+}
+
+.partner-img {
+  height: 2rem;
+}
+
+.contact-us {
+  background: url('../img/map-image.png') center / cover no-repeat;
+}
+
+@media (min-width: 768px) {
+  .timeline::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .about-img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .inverted-timeline {
+    flex-direction: row-reverse;
+    text-align: right;
+  }
+
+  .inverted-timeline > div:first-child {
+    margin-right: 41.66666667%;
+  }
+}
+
+@media (min-width: 992px) {
+  #navigation {
+    background-color: transparent;
+    padding-top: 1rem;
+    transform: translateY(0.4rem);
+    transition: 250ms linear;
+  }
+
+  #navigation .brand-logo {
+    transform: scale(1.05);
+    transition: 250ms linear;
+  }
+
+  #navigation.show {
+    background-color: var(--dark-clr);
+    transform: translateY(-0.6rem);
+  }
+
+  #navigation.show .brand-logo {
+    transform: scale(1);
+  }
+
+  #navigation ul .active {
+    color: var(--yellow-clr) !important;
+  }
+}
