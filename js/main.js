@@ -46,3 +46,7 @@ window.addEventListener('scroll', () => {
     }
   }
 });
+
+// footer date
+const footer = document.querySelector('[date-footer-date]')
+footer.textContent = new Date().getFullYear()
